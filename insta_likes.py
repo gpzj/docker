@@ -32,13 +32,13 @@ def job():
     session.end()
 
 print('creating scheduled job')
-logging.info('creating scheduled job')
+log.info('creating scheduled job')
 schedule.every(minutes).minutes.do(job)
 print('created scheduled job')
-logging.info('created scheduled job')
+log.info('created scheduled job')
 
 count = 0
-logging.info(f'initializing while loop for running the job every {minutes} minutes.')
+log.info(f'initializing while loop for running the job every {minutes} minutes.')
 while True:
     sleep(1)
     count = count + 1
@@ -49,6 +49,6 @@ while True:
     try:
         schedule.run_pending()
     except:
-        logging.warning('Exception occurred, rescheduling job.')
+        log.warning('Exception occurred, rescheduling job.')
         schedule.every(minutes).minutes.do(job)
         continue
