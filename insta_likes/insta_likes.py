@@ -11,7 +11,7 @@ igpw = os.environ['IGPW']
 minutes = 5
 numOfPosts = 3
 log_file = 'instalikes.log'
-SO = 'your_significant_others_insta_name'
+sigOther = 'your_significant_others_insta_name'
 
 logging.basicConfig(
     filename=log_file,
@@ -29,7 +29,7 @@ def job():
     session = InstaPy(username=igun, password=igpw, headless_browser=True)
     session.login()
     session.set_do_like(True, percentage=100)
-    session.interact_by_users([SO], amount=numOfPosts)
+    session.interact_by_users([sigOther], amount=numOfPosts)
     session.end()
 
 print('creating scheduled job')
