@@ -7,7 +7,7 @@
       docker_image:
         name: insta_likes:latest
         build:
-          path: /path/to/build/dir
+          path: .
         source: build
 
     - name: Run Image
