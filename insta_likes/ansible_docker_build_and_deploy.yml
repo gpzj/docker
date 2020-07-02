@@ -2,20 +2,27 @@
 - name: Build and Deploy Insta_Likes Docker Container
   hosts: localhost
   tasks:
+  
+    - name: Build and Run in Docker
+      block:
 
-    - name: Build Image
-      docker_image:
-        name: insta_likes:latest
-        build:
-          path: .
-        source: build
-
-    - name: Run Image
-      docker_container:
-        state: started
-        name: insta_likes
-        image: insta_likes:latest
-        recreate: no
-        env:
-          IGUN: {{ lookup('env','IGUN') }}
-          IGPW: {{ lookup('env','IGPW') }}
+        - name: Build Image
+          docker_image:
+            name: insta_likes:latest
+            build:
+              path: .
+            source: build
+    
+        - name: Run Image
+          docker_container:
+            state: started
+            name: insta_likes
+            image: insta_likes:latest
+            recreate: no
+            env:
+              IGUN: {{ lookup('env','IGUN') }}
+              IGPW: {{ lookup('env','IGPW') }}
+      
+      become: yes
+      become_method: sudo
+    
