@@ -5,19 +5,22 @@
     - name: Python Req's
       block:
       
-      - name: Install PIP Debian
-        apt:
-          name: python3-pip
-        when: ansible_facts['os_family'] == "Debian"
+        - name: Install PIP Debian
+          apt:
+            name: python3-pip
+          when: ansible_facts['os_family'] == "Debian"
+          
+        - name: Install PIP EL
+          dnf:
+            name: python3-pip
+          when: ansible_facts['os_family'] == "RedHat"
         
-      - name: Install PIP EL
-        dnf:
-          name: python3-pip
-        when: ansible_facts['os_family'] == "RedHat"
+        - name: Python Module
+          pip:
+            name: docker-py
       
-      - name: Python Module
-        pip:
-          name: docker-py
+      become: yes
+      become_method: sudo
   
     - name: Build and Run in Docker
       block:
