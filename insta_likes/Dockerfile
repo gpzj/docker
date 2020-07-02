@@ -1,5 +1,5 @@
 FROM instapy/instapy
-COPY insta_like_whitneys_posts.py /
-COPY requirements.txt /
+ADD insta_like_whitneys_posts.py /
+ADD requirements.txt /
 RUN pip install -r /requirements.txt
 CMD [ "python", "/insta_like_whitneys_posts.py" ]
