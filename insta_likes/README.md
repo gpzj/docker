@@ -1,11 +1,11 @@
 export the following environment variables
 
 
-export IGUN='instausername@mail.com'
+* export IGUN='instausername@mail.com'
 
-export IGPW='instapassword'
+* export IGPW='instapassword'
 
-export IGSigOther='usernameofpersontolikepostsof'
+* export IGSigOther='usernameofpersontolikepostsof'
 
 
 todo: make work with MFA enabled.
