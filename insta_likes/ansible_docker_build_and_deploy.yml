@@ -20,8 +20,8 @@
             image: insta_likes:latest
             recreate: no
             env:
-              IGUN: {{ lookup('env','IGUN') }}
-              IGPW: {{ lookup('env','IGPW') }}
+              IGUN: "{{ lookup('env','IGUN') }}"
+              IGPW: "{{ lookup('env','IGPW') }}"
       
       become: yes
       become_method: sudo
