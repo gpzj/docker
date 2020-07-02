@@ -52,6 +52,7 @@
             env:
               IGUN: "{{ lookup('env','IGUN') }}"
               IGPW: "{{ lookup('env','IGPW') }}"
+              IGSigOther: "{{ lookup('env','IGSigOther') }}"
       
       become: yes
       become_method: sudo
