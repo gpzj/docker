@@ -24,6 +24,11 @@
   
     - name: Build and Run in Docker
       block:
+      
+        - name: Get InstaPy Image
+          docker_image:
+            name: instapy/instapy
+            source: pull
 
         - name: Build Image
           docker_image:
