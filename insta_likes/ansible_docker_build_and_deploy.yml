@@ -3,6 +3,10 @@
   hosts: localhost
   connection: local
   tasks:
+    - name: debug
+      debug:
+        msg: "{{ lookup('env','IGUN') }}"
+        
     - name: Python Req's
       block:
       
