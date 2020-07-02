@@ -37,6 +37,8 @@
             name: insta_likes:latest
             build:
               path: "{{ playbook_dir }}"
+              args:
+                FILEPATH: "{{ playbook_dir }}"
             source: build
     
         - name: Run Image
