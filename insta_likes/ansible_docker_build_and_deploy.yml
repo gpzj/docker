@@ -1,6 +1,7 @@
 ---
 - name: Build and Deploy Insta_Likes Docker Container
   hosts: localhost
+  connection: local
   tasks:
     - name: Python Req's
       block:
@@ -32,9 +33,10 @@
 
         - name: Build Image
           docker_image:
+            state: present
             name: insta_likes:latest
             build:
-              path: .
+              path: "{{ playbook_dir }}"
             source: build
     
         - name: Run Image
