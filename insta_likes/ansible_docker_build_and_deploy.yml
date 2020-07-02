@@ -34,7 +34,7 @@
         - name: Build Image
           docker_image:
             state: present
-            name: insta_likes:latest
+            name: insta_auto_likes:latest
             build:
               path: "{{ playbook_dir }}"
             source: build
