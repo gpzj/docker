@@ -8,10 +8,11 @@ from instapy import InstaPy
 
 igun = os.environ['IGUN']
 igpw = os.environ['IGPW']
+sigOther = os.environ['IGSigOther']
+# sigOther = 'your_significant_others_insta_name'
 minutes = 5
 numOfPosts = 3
 log_file = 'instalikes.log'
-sigOther = 'your_significant_others_insta_name'
 
 logging.basicConfig(
     filename=log_file,
