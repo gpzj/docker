@@ -3,6 +3,10 @@
   hosts: localhost
   tasks:
   
+    - name: Python Requirements
+      pip:
+        name: docker-py
+  
     - name: Build and Run in Docker
       block:
 
