@@ -46,8 +46,8 @@
         - name: Run Image
           docker_container:
             state: started
-            name: insta_likes
-            image: insta_likes:latest
+            name: insta_auto_likes
+            image: insta_auto_likes:latest
             recreate: no
             env:
               IGUN: "{{ lookup('env','IGUN') }}"
